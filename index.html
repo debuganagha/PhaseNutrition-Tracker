@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menstrual Cycle Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Step 1: User Input Form -->
+        <div id="inputSection" class="section">
+            <h2>Menstrual Cycle Analysis</h2>
+            <form id="cycleForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required class="small-input">
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" min="5" max="60" required class="small-input">
+                </div>
+                <div class="form-group">
+                    <label for="cycleLength">Cycle Length (days):</label>
+                    <input type="number" id="cycleLength" min="1" max="60" required class="small-input">
+                </div>
+                <div class="form-group">
+                    <label for="mensesLength">Menses Length (days):</label>
+                    <input type="number" id="mensesLength" min="1" max="100" required class="small-input">
+                </div>
+                <div class="form-group">
+                    <label for="mensesScore">Menses Flow Score (1-3):</label>
+                    <input type="number" id="mensesScore" min="1" max="3" required class="small-input">
+                </div>
+                <div class="form-group">
+                    <label for="lastPeriod">Last Period Start Date:</label>
+                    <input type="date" id="lastPeriod" required class="small-input">
+                </div>
+                <div class="form-group">
+                    <label for="dietType">Diet Preference:</label>
+                    <select id="dietType" required class="small-input">
+                        <option value="">Select Diet Type</option>
+                        <option value="non_veg">Non-Vegetarian</option>
+                        <option value="veg">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                    </select>
+                </div>
+                <button type="submit" class="small-button">Get Analysis</button>
+            </form>
+        </div>
+
+        <!-- Step 2: Results Section (initially hidden) -->
+        <div id="resultsSection" class="section hidden">
+            <div class="results-header">
+                <h2>Your Personalized Analysis</h2>
+                <button id="backButton" class="secondary-button">Back to Input</button>
+            </div>
+            
+            <!-- Phase Information -->
+            <div class="phase-info">
+                <h3>Current Phase: <span id="currentPhase"></span></h3>
+                <div id="daysInfo"></div>
+            </div>
+
+            <!-- Graph Section -->
+            <div class="graph-section">
+                <h3>Cycle Visualization</h3>
+                <canvas id="cycleGraph" class="graph"></canvas>
+            </div>
+
+            <div class="recommendation-container">
+                <div class="recommendation-box" id="recommendations1">
+                    <h3>Recommended Foods</h3>
+                    <ul id="recommendedFoods">
+                        <!-- Populate dynamic recommended foods here -->
+                    </ul>
+                </div>
+            
+                <div class="recommendation-box" id="recommendations2">
+                    <h3>Foods to Avoid</h3>
+                    <ul id="foodsToAvoid">
+                        <!-- Populate dynamic foods to avoid here -->
+                    </ul>
+                </div>
+            
+                <div class="recommendation-box" id="recommendations3">
+                    <h3>Hydration Tips</h3>
+                    <p id="hydrationTip">
+                        <!-- Populate hydration tips here -->
+                    </p>
+                </div>
+            
+                <div class="recommendation-box" id="recommendations4">
+                    <h3>Additional Advice</h3>
+                    <p id="additionalAdvice">
+                        <!-- Populate additional advice here -->
+                    </p>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
